@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonsTextSize">32sp</dimen>
+    <dimen name="paddingText">6dp</dimen>
+    <dimen name="buttonMargin">15dp</dimen>
+    <dimen name="smallButtonMargins">30dp</dimen>
+    <dimen name="headerTextSize">20sp</dimen>
+    <dimen name="headerMargin">20dp</dimen>
+    <dimen name="logoBottomMargin">10dp</dimen>
+</resources>

@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">VezdeKodPin</string>
+    <string name="oneButtonText">1</string>
+    <string name="twoButtonText">2</string>
+    <string name="threeButtonText">3</string>
+    <string name="fourButtonText">4</string>
+    <string name="fiveButtonText">5</string>
+    <string name="sixButtonText">6</string>
+    <string name="sevenButtonText">7</string>
+    <string name="eightButtonText">8</string>
+    <string name="nineButtonText">9</string>
+    <string name="zeroButtonText">0</string>
+    <string name="pincodeEnterText">Введите пин-код</string>
+    <string name="emptyString"> </string>
+    <string name="contentDescription">something</string>
+    <string name="mailText"></string>
+
 </resources>

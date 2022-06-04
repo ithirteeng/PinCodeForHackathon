@@ -2,17 +2,338 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/screenBackground"
     tools:context=".MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/fourthPinView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="fitXY"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        app:layout_constraintBottom_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/pinCodeText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thirdPinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinCodeText"
+        app:srcCompat="@drawable/empty_password_circle" />
+
+    <ImageView
+        android:id="@+id/secondPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="fitXY"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        app:layout_constraintBottom_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/thirdPinView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/firstPinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinCodeText"
+        app:srcCompat="@drawable/empty_password_circle" />
+
+    <ImageView
+        android:id="@+id/thirdPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="fitXY"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        app:layout_constraintBottom_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/fourthPinView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/secondPinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinCodeText"
+        app:srcCompat="@drawable/empty_password_circle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/headerGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pinCodeGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <Button
+        android:id="@+id/buttonOne"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/oneButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonNine"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/nineButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/thirdButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonEight"
+        app:layout_constraintTop_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintVertical_bias="0.937"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonZero"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/zeroButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/fourthButtonsRaw"
+        app:layout_constraintEnd_toEndOf="@+id/buttonEight"
+        app:layout_constraintStart_toStartOf="@+id/buttonEight"
+        app:layout_constraintTop_toTopOf="@+id/thirdButtonsRaw"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonSix"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/sixButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFive"
+        app:layout_constraintTop_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonThree"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/threeButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonTwo"
+        app:layout_constraintTop_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonEight"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/eightButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/thirdButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNine"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonSeven"
+        app:layout_constraintTop_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintVertical_bias="0.937"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonFour"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/fourButtonText"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFive"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonSeven"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/sevenButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/thirdButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonEight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintVertical_bias="0.937"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonFive"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/fiveButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/secondButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSix"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonFour"
+        app:layout_constraintTop_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonTwo"
+        style="@style/buttonsMainStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/twoButtonText"
+        app:layout_constraintBottom_toTopOf="@+id/firstButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonThree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonOne"
+        app:layout_constraintTop_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smallButtonMargins"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="centerCrop"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/question_icon"
+        app:layout_constraintBottom_toTopOf="@+id/fourthButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/buttonZero"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/thirdButtonsRaw"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/smallButtonMargins"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="centerCrop"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:src="@drawable/delete_icon"
+        app:layout_constraintBottom_toTopOf="@+id/fourthButtonsRaw"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonZero"
+        app:layout_constraintTop_toTopOf="@+id/thirdButtonsRaw"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/buttonsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="buttonThree,buttonZero,buttonSix,buttonOne,buttonQuestion,buttonDelete,buttonTwo,buttonEight,buttonNine,buttonSeven,buttonFive,buttonFour" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/firstButtonsRaw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/secondButtonsRaw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/thirdButtonsRaw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/fourthButtonsRaw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/buttonMargin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/buttonMargin" />
+
+    <TextView
+        android:id="@+id/pinCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/headerMargin"
+        android:fontFamily="@font/sf_pro_display"
+        android:text="@string/pincodeEnterText"
+        android:textColor="@color/digitsColor"
+        android:textSize="@dimen/headerTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/headerGuideline" />
+
+    <ImageView
+        android:id="@+id/firstPinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="fitXY"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        app:layout_constraintBottom_toTopOf="@+id/pinCodeGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/secondPinView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/pinCodeText"
+        app:layout_constraintTop_toBottomOf="@+id/pinCodeText"
+        app:srcCompat="@drawable/empty_password_circle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/headerGuideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pinCodeText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mail_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
