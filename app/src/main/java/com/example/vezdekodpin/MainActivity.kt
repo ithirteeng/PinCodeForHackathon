@@ -11,15 +11,17 @@ import com.example.vezdekodpin.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     companion object {
         const val PIN_CODE = "pincode"
+        const val NUMBERS_AMOUNT = 4
     }
 
     private lateinit var binding: ActivityMainBinding
     private var currentPinCode = ""
     private var mainPinCode = ""
-    private var pinSpace = arrayListOf<Boolean>(false, false, false, false)
+    private var pinSpace = arrayListOf(false, false, false, false)
     private var isPinCreated = false
     private lateinit var pinArray: ArrayList<ImageView>
     private val storage = PinCodeSaver()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -44,19 +46,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun refreshButtonCLickEvent() {
         binding.newPasswordButton.setOnClickListener {
-            var space = check()
-            if (space != 0) {
-                makeToast(resources.getString(R.string.numbersLengthError2))
-            } else {
-                isPinCreated = true
-                mainPinCode = currentPinCode
-                storage.clearPinCode(this)
-                storage.savePin(this, PIN_CODE, mainPinCode)
-                makeToast(resources.getString(R.string.savedPinText))
-                for (i in 0 until 4) {
-                    binding.buttonDelete.performClick()
-                }
+            for (i in 0 until NUMBERS_AMOUNT) {
+                binding.buttonDelete.performClick()
             }
+            for (i in 0 until NUMBERS_AMOUNT) {
+                pinSpace[i] = false
+            }
+            isPinCreated = false
+            binding.pinCodeText.text = this.resources.getString(R.string.pincodeCreateText)
+            mainPinCode = ""
+            currentPinCode = ""
+            storage.clearPinCode(this)
         }
     }
 
@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
             button.setOnClickListener {
                 var space = check()
                 if (button == binding.buttonDelete) {
-                    if (space != 4) {
+                    if (space != NUMBERS_AMOUNT) {
                         space += 1
-                        pinSpace[4 - space] = false
+                        pinSpace[NUMBERS_AMOUNT - space] = false
                         check()
                         currentPinCode = currentPinCode.substring(0, currentPinCode.length - 1)
                     }
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                             mainPinCode = currentPinCode
                             storage.savePin(this, PIN_CODE, mainPinCode)
                             makeToast(resources.getString(R.string.savedPinText))
-                            for (i in 0 until 4) {
+                            for (i in 0 until NUMBERS_AMOUNT) {
                                 binding.buttonDelete.performClick()
                             }
                         }
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                     if (space == 0) {
                         makeToast(resources.getString(R.string.numbersLengthError))
                     } else {
-                        pinSpace[4 - space] = true
+                        pinSpace[NUMBERS_AMOUNT - space] = true
                         check()
                         when (button) {
                             binding.buttonOne -> {
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun check(): Int {
         var counter = 0
-        for (i in 0 until 4) {
+        for (i in 0 until NUMBERS_AMOUNT) {
             if (!pinSpace[i]) {
                 counter++
                 pinArray[i].setImageResource(R.drawable.empty_password_circle)
