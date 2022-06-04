@@ -11,8 +11,15 @@
     <string name="nineButtonText">9</string>
     <string name="zeroButtonText">0</string>
     <string name="pincodeEnterText">Введите пин-код</string>
+    <string name="pincodeCreateText">Создайте пин-код</string>
     <string name="emptyString"> </string>
+    <string name="refreshPassword">Сменить пароль</string>
     <string name="contentDescription">something</string>
+    <string name="numbersLengthError">Вы не можете ввести больше 4 цифр</string>
+    <string name="numbersLengthError2">Пин-код не может состоять больше чем из 4 цифр!</string>
+    <string name="correctPin">Введённый пин-код - верный</string>
+    <string name="wrongPin">Введённый пин-код - неверный</string>
+    <string name="savedPinText">Ваш пин-код сохранён</string>
     <string name="mailText"></string>
 
 </resources>

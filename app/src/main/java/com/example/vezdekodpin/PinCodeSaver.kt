@@ -18,7 +18,7 @@ class PinCodeSaver {
         pinEditor = pin?.edit()
     }
 
-    fun makePinSaving(myContext: Context, key: String, pinCode: String) {
+    fun savePin(myContext: Context, key: String, pinCode: String) {
         init(myContext)
         pinEditor?.putString(key, pinCode)
         pinEditor?.commit()

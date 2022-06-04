@@ -212,16 +212,16 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/buttonQuestion"
+        android:id="@+id/buttonTick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/smallButtonMargins"
         android:background="@android:color/transparent"
         android:contentDescription="@string/contentDescription"
-        android:scaleType="centerCrop"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:src="@drawable/question_icon"
+        android:scaleType="fitXY"
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        android:src="@drawable/tick_icon"
         app:layout_constraintBottom_toTopOf="@+id/fourthButtonsRaw"
         app:layout_constraintEnd_toStartOf="@+id/buttonZero"
         app:layout_constraintHorizontal_bias="0.5"
@@ -252,7 +252,7 @@
         android:id="@+id/buttonsGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="buttonThree,buttonZero,buttonSix,buttonOne,buttonQuestion,buttonDelete,buttonTwo,buttonEight,buttonNine,buttonSeven,buttonFive,buttonFour" />
+        app:constraint_referenced_ids="buttonThree,buttonZero,buttonSix,buttonOne,buttonTick,buttonDelete,buttonTwo,buttonEight,buttonNine,buttonSeven,buttonFive,buttonFour" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/firstButtonsRaw"
@@ -328,6 +328,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
         app:layout_constraintBottom_toTopOf="@+id/headerGuideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -335,5 +336,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/mail_icon" />
+
+    <Button
+        android:id="@+id/newPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/sf_pro_display"
+        android:text="@string/refreshPassword"
+        android:textColor="@color/digitsColor"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/fourthButtonsRaw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
