@@ -237,6 +237,7 @@
         android:layout_marginTop="@dimen/smallButtonMargins"
         android:background="@android:color/transparent"
         android:contentDescription="@string/contentDescription"
+        android:padding="20dp"
         android:scaleType="centerCrop"
         android:scaleX="0.6"
         android:scaleY="0.6"
@@ -335,7 +336,8 @@
         app:layout_constraintStart_toStartOf="@+id/pinCodeText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/mail_icon" />
+        app:srcCompat="@drawable/mail_icon"
+        tools:ignore="ImageContrastCheck" />
 
     <Button
         android:id="@+id/newPasswordButton"
